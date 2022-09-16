@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/test.js"></script>
+</head>
+
+<body>
+  <!-- 댓글기능 -->
+  <div id="form-commentInfo">
+    <div class="comment-container">
+      <div id="comment-count">댓글 <span id="count">0</span></div>
+      <div class="comment-input-wrap">
+        <input id="comment-input" onkeyup="enterkey()" placeholder="댓글을 입력해 주세요.">
+        <button id="submit">등록</button>
+      </div>
+    </div>
+  </div>
+  <div id=comments>
+    <!-- 댓글 출력 공간 -->
+  </div>
+
+</body>
+
+<script>
+  // keyup event
+  function enterkey() {
+    // 공백제거 생각해야됨
+    if (window.event.keyCode == 13) {
+
+      document.querySelector('button').click()
+    }
+  }
+</script>
+
+<!-- <script>
+
+//   const noticeData = [{
+//           url: 'a.html',
+//           title: '에스티엑스건설자산관리 주식회사 해산결의에 따른 채권신고 안내 공고 (2차)'
+//         },
+//         {
+//           url: 'b.html',
+//           title: '에스티엑스건설자산관리 주식회사 해산결의에 따른 채권신고 안내 공고 (1차)'
+//         },
+//         {
+//           url: 'c.html',
+//           title: '2021년도 협력업체 모집공고'
+//         },
+//         {
+//           url: 'd.html',
+//           title: 'STX건설 상호 사용 관련 안내'
+//         }
+//       ]
+
+// // 기본 데이터 출력
+// for(let i = 0; i < noticeData.length; i++) {
+//   console.log(noticeData[i]);
+// }
+// console.log('============= forEach');
+// // forEach 메서드 이용
+// noticeData.forEach(function(value, index){
+//   console.log(value, index);
+// });
+// console.log('=============for In');
+// // for in 루프문 사용
+// for(let idx in noticeData) {
+//   console.log(idx, noticeData[idx] );
+// }
+// console.log('=============for of');
+// // for of 루프문 사용
+// for( let idx of noticeData) {
+//   console.log(idx)
+// }
+// // 배열 요소 없애기
+
+// let arr = ['가','라','나','다','라','마','바','라'];
+// let [...res] = arr;
+// console.log("res",res);
+// res.push('ghoaghrhoi')
+// console.log(arr.indexOf('고')); // 배열에 포함된 요소가 아닐 경우에는 -1로 표기됨
+// console.log(arr)
+// // console.log(arr.indexOf('라'));
+// // console.log(arr.splice(1,1))
+// // console.log(arr);
+// // console.log(arr.indexOf('라'));
+// // console.log(arr.splice(3,1));
+// // console.log(arr);
+// // console.log(arr.indexOf('라'));
+// // console.log(arr.splice(5,1));
+// // console.log(arr);
+
+// for(let i = 0; i < res.length; i++){
+//   if(res.indexOf('라') > -1){
+//     res.splice(res.indexOf('라'), 1);  // 일부로 res.indexOf 변수로 따로 빼지 않음
+//   }
+// }
+// console.log("for문",res)
+// // let index = arr.indexOf('라');
+// // while(index > -1){
+// //   arr.splice(index, 1);
+// //   index = arr.indexOf('라');
+// // }
+
+// // console.log("while문", arr);
+
+// // 값의 교환
+// a = 5;
+// b = 7;
+// //7,5 = 5,7
+// [b, a] = [a, b];
+// console.log(a);
+// console.log(b);
+
+// const arrNum = [1, 4, 9, 6];
+// // map() 메서드 
+// // 각각에 함수를 한번 씩 실행해서 결과를 배열로 반환한다.
+// const mapArr = arrNum.map(function(x) {
+//   return x * 3
+// });
+// // const mapArr = arrNum.map( x => x * 3 );
+// console.log(mapArr);
+// const mapArr2 = arrNum.map(Math.sqrt);
+// console.log(mapArr2);
+
+// ========================================================================
+
+
+</script> -->
+
+
+
+</html>
