@@ -1,4 +1,4 @@
-window.onload = function(){
+
     const inputBar = document.querySelector('#comment-input');
     const rootDiv = document.querySelector('#comments');
     const btn = document.querySelector('#submit');
@@ -134,4 +134,3 @@ window.onload = function(){
         
     }
 
-}

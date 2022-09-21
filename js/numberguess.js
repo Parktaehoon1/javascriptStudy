@@ -1,4 +1,3 @@
-window.onload = function(){
     // 로직 생각하기
     // 1. 랜덤 번호 지정.
     // 2. 유저가 번호 입력 후 go버튼 누름
@@ -78,4 +77,3 @@ window.onload = function(){
 
     pickRandomNum()
 
-}
