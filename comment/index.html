@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/comment/comment.css">
+</head>
+
+<body>
+  <!-- 댓글기능 test.js 미구현 사항 있음-->
+  <div>
+    <div id="form-commentInfo">
+      <div class="comment-container">
+        <div id="comment-count">댓글 <span id="count">0</span></div>
+        <div class="comment-input-wrap">
+          <input id="comment-input" onkeyup="enterkey()" placeholder="댓글을 입력해 주세요.">
+          <button id="submit">등록</button>
+        </div>
+      </div>
+    </div>
+    <div id=comments> 
+      댓글출력공간
+    </div>
+  </div>
+
+
+</body>
+<script src="/comment/comment.js"></script>
+
+<script>
+
+  // 댓글구현 script keyup event
+  function enterkey() {
+    // 공백제거 생각해야됨
+    if (window.event.keyCode == 13) {
+
+      document.querySelector('button').click()
+    }
+  }
+</script>
+
+
+</html>

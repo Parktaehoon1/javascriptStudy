@@ -4,6 +4,7 @@
 }
 .task-tabs div{
     padding: 1em;
+    cursor: pointer;
 }
 .task-area{
     border: 1px solid lightgray;
