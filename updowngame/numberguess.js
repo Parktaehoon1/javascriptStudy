@@ -22,6 +22,13 @@ resetButton.addEventListener("click", reset);
 userInput.addEventListener("focus", function () {
   userInput.value = "";
 });
+userInput.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    playButton.click();
+    userInput.value = "";
+  }
+});
 
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100) + 1;
@@ -71,6 +78,8 @@ function reset() {
   // 새로운 랜덤 번호 생성
   resultArea.textContent = "결과값이 여기 나옵니다.";
   pickRandomNum();
+  chances = 5;
+  chanceArea.textContent = `남은 찬스: ${chances}번`;
 }
 
 pickRandomNum();
