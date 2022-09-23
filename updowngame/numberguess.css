@@ -155,6 +155,19 @@ body {
   text-align: center;
 }
 
+.win {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 200px;
+  height: 200px;
+  background: url("/updowngame/win.gif") no-repeat center;
+  background-size: contain;
+  z-index: 999;
+}
+
 .game-info {
   position: relative;
   display: block;

@@ -16,6 +16,7 @@ let chances = 5;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
+let winImg = document.querySelector(".win");
 
 playButton.addEventListener("click", play); // play 함수에 () 하면 바로 실행되는거 변수로서 넘기는거라 () 없이 간다.
 resetButton.addEventListener("click", reset);
@@ -58,6 +59,7 @@ function play() {
   } else {
     resultArea.textContent = "맞추셨습니다!";
     gameOver = true;
+    winImg.style.display = "block";
   }
 
   history.push(userValue);
@@ -80,6 +82,7 @@ function reset() {
   pickRandomNum();
   chances = 5;
   chanceArea.textContent = `남은 찬스: ${chances}번`;
+  winImg.style.display = "none";
 }
 
 pickRandomNum();
