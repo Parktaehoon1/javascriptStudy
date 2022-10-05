@@ -164,3 +164,80 @@
 
 //   }} 
 //   console.log(sumNumber());
+
+// map 함수 
+// let names = [1,2,3,4]
+// let data = names.map((item)=>{
+//     return item+"haha"
+// })
+
+// console.log(data) 
+// map 함수는 배열에 추가하여 사용도 가능하다
+
+//map의 주된 사용
+let ceoList = [
+    {name:1, age:23, ceo:true},
+    {name:10, age:231, ceo:true},
+    {name:100, age:233, ceo:true}
+]
+
+// let aaa = ceoList.map((item)=>{
+//     return item.name
+// })
+// console.log(aaa)
+
+// let gg = ceoList.filter((item)=> {
+//     return item.age > 200
+// })
+// console.log(gg)
+
+// filter 는 조건을 주면 true 인것만 반환
+
+let data2 = ceoList.some((item) => {
+    return item.age > 200;
+})
+console.log(data2)
+
+// some은 반환값이 하나라도 있으면 true 줌
+
+
+// let names = [
+
+//     "Steven Paul Jobs",
+//     "Bill Gates",
+//     "Mark Elliot Zuckerberg",
+//     "Elon Musk",
+//     "Jeff Bezos",
+//     "Warren Edward Buffett",
+//     "Larry Page",
+//     "Larry Ellison",
+//     "Tim Cook",
+//     "Lloyd Blankfein",];
+   
+//   map 문제
+//   모든 이름을 대문자로 바꾸어서 출력하시오.
+//   성을제외한 이름만 출력하시오. (예-[“Steven”,“Bill”,“Mark”,“Elon”…])
+//   이름의 이니셜만 출력하시오. (예-[“SPU”,“BG”,“MEZ”,“EM”…])
+   
+//   filter 문제
+//   이름에 a를 포함한 사람들을 출력하시오.
+//   이름에 같은 글자가 연속해서 들어간 사람을 출력하시오. (예-tt,ff,ll 이런 글자들)
+   
+//   some 문제
+//   전체 이름의 길이가 20자 이상인 사람이 있는가?
+//   성을 제외한 이름에 p를 포함한 사람이 있는가?(대소문자 상관 no)
+   
+//   every 문제
+//   모두의 전체 이름의 길이가 20자 이상인가?
+//   모두의 이름에 a 가 포함되어 있는가?
+   
+//   find 문제
+//   전체 이름의 길이가 20자 이상인 사람을 찾으시오.
+//   미들네임이 포함되어있는 사람을 찾으시오.(예-Steven Paul Jobs)
+   
+//   findIndex 문제
+//   전체 이름의 길이가 20자 이상인 사람의 인덱스 번호를 찾으시오.
+//   미들네임이 포함되어있는 사람의 인덱스 번호를 찾으시오.
+   
+
+// 답 https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/rkMXvayvK
