@@ -23,7 +23,7 @@ for (let i = 0; i < tabs.length; i++) {
         filter(event)
     })
 }
-// addButton.addEventListener('click', addTask)
+addButton.addEventListener('click', addTask)
 // addButton.addEventListener("mousedown", addTask);
 taskInput.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
@@ -41,7 +41,7 @@ function addTask() {
     taskList.push(task)  // 푸쉬될떄 그려줘야되니까!! 밑에 render
     console.log(taskList)
     taskInput.value="";
-    render()
+    render() // render은 그려주는 함수 
 }
 
 function render() {
