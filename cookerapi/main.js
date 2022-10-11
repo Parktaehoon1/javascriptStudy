@@ -86,7 +86,9 @@ const render = () => {
             <div>
                 총 영양성분 : ${Math.floor(item.recipe.totalWeight)} cal
             </div>
-            <a href="${item.recipe.url}" target='_blank'>레시피 보러가기</a>
+            <a href="${
+              item.recipe.url
+            }" target='_blank' class="recipe-btn">레시피 보러가기</a>
         </div>
     </div>`;
     return tag;
