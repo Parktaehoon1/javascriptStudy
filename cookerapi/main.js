@@ -47,6 +47,25 @@ const getFoodByTopics = async (event) => {
   render();
 };
 
+const getFoodByKeyword = async () => {
+  // 검색 키워드 읽어오기
+  // url에 검색 키워드 붙이기
+  // header 준비
+  // url 부르기
+  // 데이터 가져오기
+  // 데이터 보여주기
+
+  let keyword = document.getElementById("search-input").value;
+  console.log(keyword);
+  let url = new URL(
+    `https://api.edamam.com/api/recipes/v2?type=public&q=${keyword}&app_id=d232b022&app_key=18c85995b5bccd69f64452bf8de8924a`
+  );
+  let response = await fetch(url);
+  let data = await response.json();
+  recipe = data.hits;
+  render();
+};
+
 const render = () => {
   let foodHTML = "";
   let foodArr = [];
@@ -73,14 +92,18 @@ const render = () => {
     // 상세정보
     let disgestTotal = item.recipe.digest.length;
     let disgestHtml = "";
-    for (let i = 0; i < disgestTotal; i++) {
-      let obj = item.recipe.digest[i];
-      disgestHtml += `${obj.label}: ${Math.floor(obj.total)} ${obj.unit}`;
-    }
+    // for (let i = 0; i < disgestTotal; i++) {
+    //   let obj = item.recipe.digest[i];
+    //   disgestHtml += `${obj.label}: ${Math.floor(obj.total)} ${obj.unit}`;
+    // }
+    // tag += disgestHtml;
+
+    let digetstArr = item.recipe.digest.map((digestItem) => {
+      disgestHtml += `${digestItem.label}: ${Math.floor(digestItem.total)} ${
+        digestItem.unit
+      }`;
+    });
     tag += disgestHtml;
-
-    let digetstArr = item.recipe.digest.map((digestItem) => digestItem);
-
     // 마무리 코드
     tag += `</div>
             <div>
@@ -99,3 +122,19 @@ const render = () => {
 };
 
 getLatestfood();
+
+let searchBtn = document.getElementById("search-btn");
+console.log("버튼", searchBtn);
+searchBtn.addEventListener("click", getFoodByKeyword);
+
+let appearBtn = document.querySelector(".appear-btn");
+console.log("appearbtn", appearBtn);
+let showBtn = document.querySelector(".show-btn");
+console.log("showbtn", "show-btn");
+
+let searchInputShow = () => {
+  console.log("클릭");
+  showBtn.style.opacity = "1";
+  appearBtn.style.display = "none";
+};
+appearBtn.addEventListener("click", searchInputShow);

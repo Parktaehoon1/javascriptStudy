@@ -14,17 +14,25 @@
   <body>
     <div class="wrap">
       <header class="header">
-        <div>
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass appear-btn"></i>
+          <div class="show-btn">
+            <input type="text" id="search-input" />
+            <button id="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
         </div>
         <h1>Food Recipe</h1>
       </header>
       <nav class="menu-list">
         <button>Bulgogi</button>
+        <button>kimchi</button>
         <button>chicken</button>
         <button>beef</button>
         <button>salad</button>
         <button>fish</button>
+        <button>pizza</button>
       </nav>
       <section id="food-board"></section>
     </div>

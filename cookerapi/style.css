@@ -52,6 +52,27 @@ body {
   margin: 20px;
 }
 
+.search-box {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  display: block;
+}
+.appear-btn {
+  cursor: pointer;
+}
+.show-btn {
+  transition: all 0.3s;
+  opacity: 0;
+}
+#search-btn {
+  border: 0;
+  background-color: transparent;
+}
+#search-btn > i {
+  font-size: 16px;
+}
+
 .header > h1 {
   text-transform: uppercase;
 }
