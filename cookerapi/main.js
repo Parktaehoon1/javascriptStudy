@@ -49,39 +49,51 @@ const getFoodByTopics = async (event) => {
 
 const render = () => {
   let foodHTML = "";
-  foodHTML = recipe
-    .map((recipe) => {
-      return `<div class="food-list">
+  let foodArr = [];
+  foodArr = recipe.map((item) => {
+    let tag = `<div class="food-list">
         <div class="food-img">
-            <img class="food-img-size" src="${recipe.recipe.image}" alt="">
+            <img class="food-img-size" src="${item.recipe.image}" alt="">
         </div>
         <div class="food-desc">
-            <h2>${recipe.recipe.label}</h2>
+            <h2>${item.recipe.label}</h2>
             <p>
-                식사 타입 : ${recipe.recipe.dishType}
+                식사 타입 : ${item.recipe.dishType}
             </p>
             <p>
-                추천 시간 : ${recipe.recipe.mealType}
+                추천 시간 : ${item.recipe.mealType}
             </p>
             <div>
-                재료 : ${recipe.recipe.ingredientLines}
+                재료 : ${item.recipe.ingredientLines}
             </div>
 
             <div>
-                영양성분 
-                ${recipe.recipe.digest[0].label} : ${Math.floor(
-        recipe.recipe.digest[0].total
-      )} ${recipe.recipe.digest[0].label}
-            </div>
+                영양성분 :`;
+
+    // 상세정보
+    let disgestTotal = item.recipe.digest.length;
+    let disgestHtml = "";
+    for (let i = 0; i < disgestTotal; i++) {
+      let obj = item.recipe.digest[i];
+      disgestHtml += `${obj.label}: ${Math.floor(obj.total)} ${obj.unit}`;
+    }
+    tag += disgestHtml;
+
+    let digetstArr = item.recipe.digest.map((digestItem) => digestItem);
+
+    // 마무리 코드
+    tag += `</div>
             <div>
-                총 영양성분 : ${Math.floor(recipe.recipe.totalWeight)} cal
+                총 영양성분 : ${Math.floor(item.recipe.totalWeight)} cal
             </div>
-            <a href="${recipe.recipe.url}" target='_blank'>레시피 보러가기</a>
+            <a href="${item.recipe.url}" target='_blank'>레시피 보러가기</a>
         </div>
     </div>`;
-    })
-    .join("");
+    return tag;
+  });
 
+  foodHTML = foodArr.join("");
   document.getElementById("food-board").innerHTML = foodHTML;
 };
+
 getLatestfood();
