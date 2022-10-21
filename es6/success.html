@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>태조 이성계가 태어난 년도는?</p>
+<input type="text" id="answer">
+<button id="send-answer">제출</button>
+
+</body>
+<script>
+    let count = 3; 
+    let solution = '1333';
+    let answer = document.getElementById("send-answer");
+    console.log(answer)
+    answer.addEventListener("click", function(){
+        let answerV = document.getElementById("answer").value
+      console.log(answerV)
+        if(answerV === solution){
+            alert("성공")
+        } else if(answerV !== solution || count === 0){
+            count--
+            alert("실패")
+            
+            console.log(count)
+        }
+    }) 
+    
+</script>
+</html>
