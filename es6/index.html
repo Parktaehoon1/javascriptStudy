@@ -6,11 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     
-    <script src="main.js">
+    <div class="wrap">
+        <!-- <form action="success.html">
+            <div>
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div>
+                <input type="password" class="form-control">
+            </div>
+            <button type="submit" id="send">전송</button>
+            <button type="button" id="close">닫기</button>
+        </form> -->
+        
+        <!-- dark mode -->
+        <nav>
+            <div>
+                <span>JSShop</span>
+                <span id="mode">Dark</span>
+                <button type="button" class="badge">
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+    
 
+    <!-- <script src="main.js"></script> -->
+    <script>
+        
+        // 블힙
+        // function goal(a, b){
+        //     if(a || b < 40){
+        //         console.log("블합격")
+        //     } else if(a + b >= 120) {
+        //         console.log("합격")
+        //     }
+        // }
+        // goal(40,50)
+
+        // 3,6,9 게임
+        // function game(index){
+        //     const last = String(index).slice(-1)
+        //     // console.log(typeof last)
+        //     const lastNb = parseInt(last)
+        //     // console.log(typeof lastNb)
+        //     if(lastNb % 3 === 0){
+        //         console.log("박수")
+        //     } else {
+        //         console.log("통과")
+        //     }
+        // }
+        // game(11)
+        // game(16)
+        // game(19)
+        
+        // darkmode 
+        // badge 클릭시 글자 색 변경 (toggle)
+        let count = 0;
+        let mode = $('#mode')
+        $('.badge').on('click', function(){
+
+        })
+
+
+    
     </script>
 </body>
 </html>
