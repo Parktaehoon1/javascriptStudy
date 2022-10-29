@@ -1,80 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
-</head>
-<body>
-    
-    <div class="wrap">
-        <!-- <form action="success.html">
-            <div>
-                <input type="text" class="form-control" id="email">
-            </div>
-            <div>
-                <input type="password" class="form-control">
-            </div>
-            <button type="submit" id="send">전송</button>
-            <button type="button" id="close">닫기</button>
-        </form> -->
-        
-        <!-- dark mode -->
-        <nav>
-            <div>
-                <span>JSShop</span>
-                <span id="mode">Dark</span>
-                <button type="button" class="badge">
-                    <span></span>
-                </button>
-            </div>
-        </nav>
-    </div>
-    
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- <div class="alert alert-danger">
+      <span id="num">5</span>초 이내 구매시 사은품 증정
+    </div> -->
 
     <!-- <script src="main.js"></script> -->
     <script>
-        
-        // 블힙
-        // function goal(a, b){
-        //     if(a || b < 40){
-        //         console.log("블합격")
-        //     } else if(a + b >= 120) {
-        //         console.log("합격")
-        //     }
-        // }
-        // goal(40,50)
+      let count = 5;
+      function hideNum() {
+        count--;
+        if (count >= 0) {
+          document.querySelector("#num").innerHTML = count;
+        } else {
+          clearTimeout(aaa);
+          document.querySelector(".alert").style.display = "none";
+        }
+      }
+      let aaa = setInterval(hideNum, 1000);
 
-        // 3,6,9 게임
-        // function game(index){
-        //     const last = String(index).slice(-1)
-        //     // console.log(typeof last)
-        //     const lastNb = parseInt(last)
-        //     // console.log(typeof lastNb)
-        //     if(lastNb % 3 === 0){
-        //         console.log("박수")
-        //     } else {
-        //         console.log("통과")
-        //     }
-        // }
-        // game(11)
-        // game(16)
-        // game(19)
-        
-        // darkmode 
-        // badge 클릭시 글자 색 변경 (toggle)
-        let count = 0;
-        let mode = $('#mode')
-        $('.badge').on('click', function(){
-
-        })
-
-
-    
+      "abc".includes("a"); // boolean
+      //   정규식
+      // /a/.test('abcd')
+      //   정규식의 장점 /[a-z]/ a~~z 까지
+      // 이메일 정규식
+      //   /\S+@\S+\.\S+/.test('a@bbb.ccc')
+      //S는 한글자를 뜻함 그래서 저거는 안맞음 /\S\ 한글자가 있는지 찾는 정규식
+      // + 뒤에 글자수 있는거까지 파악 (이메일 정규식)
     </script>
-</body>
+  </body>
 </html>

@@ -1,34 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <p>태조 이성계가 태어난 년도는?</p>
+    <style>
+      ul {
+        list-style: none;
+      }
+      .gnb > li {
+        display: block;
+      }
+      .submenu {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p>태조 이성계가 태어난 년도는?</p>
 <input type="text" id="answer">
-<button id="send-answer">제출</button>
+<button id="send-answer">제출</button> -->
 
-</body>
-<script>
-    let count = 3; 
-    let solution = '1333';
-    let answer = document.getElementById("send-answer");
-    console.log(answer)
-    answer.addEventListener("click", function(){
-        let answerV = document.getElementById("answer").value
-      console.log(answerV)
-        if(answerV === solution){
-            alert("성공")
-        } else if(answerV !== solution || count === 0){
-            count--
-            alert("실패")
-            
-            console.log(count)
+    <ul class="gnb">
+      <li>
+        <a href="#">1</a>
+        <ul class="submenu">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">2</a>
+        <ul class="submenu">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">3</a>
+        <ul class="submenu">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">4</a>
+        <ul class="submenu">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    // let count = 3;
+    // let solution = "1333";
+    // let answer = document.getElementById("send-answer");
+    // console.log(answer);
+    // answer.addEventListener("click", function () {
+    //   let answerV = document.getElementById("answer").value;
+    //   console.log(answerV);
+    //   if (answerV === solution) {
+    //     alert("성공");
+    //   } else if (answerV !== solution || count === 0) {
+    //     count--;
+    //     alert("실패");
+    //     console.log(count);
+    //   }
+    // });
+
+    let mb_menu_li = $(".gnb > li");
+    let mb_mainmenu = $(".gnb > li > a");
+    let mb_submenu = $(".submenu");
+
+    $.each(mb_mainmenu, function (index) {
+      // 인덱스가 들어가면 mb_main_menu의 0,1,2,순서들어감
+      $(this).click(function (event) {
+        // href를 막는다.
+        event.preventDefault();
+
+        // 클릭하면 현재 포커스 클래스가 있는지 검토
+        let temp = $(this).hasClass("mb-menu-focus");
+
+        if (temp) {
+          console.log(this);
+          // 포커스 색상 적용해제
+          $(this).removeClass("mb-menu-focus");
+          // 아이콘 모션 해제
+          $(this).removeClass("mb-icon-rot");
+          // 펼처진 해당 서브 메뉴를 닫아준다.
+          mb_submenu.eq(index).hide();
+        } else {
+          // 일단 모두 숨겨라
+          mb_submenu.hide();
+
+          // 일단 모든 포커스 색상을 해제한다.
+          mb_mainmenu.removeClass("mb-menu-focus");
+
+          // 일단 아이콘을 원래대로 돌려라
+          mb_mainmenu.removeClass("mb-icon-rot");
+          // 포커스 색상 적용하기
+          $(this).addClass("mb-menu-focus");
+          // 아이콘을 돌리자.
+          $(this).addClass("mb-icon-rot");
+          // 클릭된 번호만 보여라
+          mb_submenu.eq(index).show();
         }
-    }) 
-    
-</script>
+      });
+    });
+  </script>
 </html>
